@@ -21,7 +21,7 @@ def main():
 	parser.add_argument('filepath',        type = str,         help = 'filepath')
 	parser.add_argument('start',           type = str,         help = 'beginning of the paragraph')
 	parser.add_argument('end',             type = str,         help = 'end of the paragraph')
-	parser.add_argument('--out',           type = str,         help = 'outputDir',        				default = '/home/ezaiuhx/utilpy/excerpt.txt',   	dest = 'outputDir')
+	parser.add_argument('--out',           type = str,         help = 'outputDir',        				default = './excerpt.txt',   	dest = 'outputDir')
 
 	args     	= parser.parse_args()
 	filepath 	= args.filepath

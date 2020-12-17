@@ -2,22 +2,26 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 import commands
 from argparse import ArgumentParser
 
 
 def doExcerpt(inputPath, outputPath, beginning, end):
-    cmd = '/home/ezaiuhx/utilpy/excerpt.py ' + inputPath + ' "' + beginning + '" "' + end + '" '
+    global root_path
+    cmd = root_path + '/excerpt.py ' + inputPath + ' "' + beginning + '" "' + end + '" '
     cmd += '--out="' + outputPath +'"'
     os.system(cmd)
 
 def doStatistic(inputPath):
-    cmd = '/home/ezaiuhx/utilpy/statistic.py --filePath=' + inputPath
+    global root_path
+    cmd = root_path + '/statistic.py --filePath=' + inputPath
     os.system(cmd)
 
 def main():
-    excerpt_procedure_path   = '/home/ezaiuhx/utilpy/istatsHelper_excerpt_procedure.txt'
-    excerpt_cause_path       = '/home/ezaiuhx/utilpy/istatsHelper_excerpt_cause.txt'
+    global root_path
+    root_path              = sys.path[0]
+    excerpt_procedure_path = root_path + '/istatsHelper_excerpt_procedure.txt'
 
     parser = ArgumentParser()
     parser.add_argument('logpath',      type = str,         help = 'file path of the istats')

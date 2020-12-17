@@ -8,7 +8,7 @@ from argparse import ArgumentParser
 
 def main():
     parser = ArgumentParser()
-    parser.add_argument('--filePath',           type = str,         help = 'file path',           default = '/home/ezaiuhx/utilpy/excerpt.txt',              dest = 'filePath')
+    parser.add_argument('--filePath',           type = str,         help = 'file path',           default = './excerpt.txt',              dest = 'filePath')
     args     	= parser.parse_args()
     filePath 	= args.filePath
 
@@ -26,6 +26,6 @@ def main():
                         dict[elem] = 0
                     dict[elem] += int(num.group())
     for key,value in dict.items():
-		print(key, value)
+        print(key, value)
 
 main()
